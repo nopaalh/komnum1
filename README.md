@@ -49,3 +49,42 @@ Ini adalah rumus Regula Falsi (false positition)
   - Periksa Tanda :
     - Kalau f(a) × f(c) < 0 → akar ada di [a, c] → ubah b = c
     - Kalau f(b) × f(c) < 0 → akar ada di [c, b] → ubah a = c
+
+3. VISUALISASI FUNGSI
+```
+def plot_function(func_expr, root=None, x_range=(-10, 10)):
+```
+Penjelasan :
+- Membuat grafik fungsi f(x)
+- Menampilkan garis sumbu x = 0 dan y = 0
+- Menandai akar (jika ditemukan) sebagai titik merah
+
+4. INPUT USER
+```
+persamaan = input("Masukkan fungsi f(x): ")
+a = float(input("Masukkan nilai batas bawah (a): "))
+b = float(input("Masukkan nilai batas atas (b): "))
+```
+Penjelasan :
+- Fungsi f(x)
+- Nilai a dan b (interval akar)
+  Lalu mengecek apakah fungsi ada tanda '='
+  ```
+  if '=' in persamaan:
+    kiri, kanan = persamaan.split('=')
+    fungsi_expr = parse_expr(kiri.strip()) - parse_expr(kanan.strip())
+else:
+    fungsi_expr = parse_expr(persamaan)
+  ```
+Penjelasan :
+- mengubah misalnya x2 = 4 → x2 - 4 = 0
+
+ 5. EKSEKUSI
+```
+akar = regula_falsi(fungsi_expr, a, b)
+if akar is not None:
+    plot_function(fungsi_expr, root=akar, x_range=(a - 1, b + 1))
+```
+Penjelasan :
+- Jalankan Regula Falsi
+- Jika ditemukan akar, tampilkan grafik dan titik akar
