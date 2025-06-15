@@ -69,6 +69,7 @@ Penjelasan :
 - Fungsi f(x)
 - Nilai a dan b (interval akar)
   Lalu mengecek apakah fungsi ada tanda '='
+  
   ```
   if '=' in persamaan:
     kiri, kanan = persamaan.split('=')
@@ -76,15 +77,18 @@ Penjelasan :
 else:
     fungsi_expr = parse_expr(persamaan)
   ```
+
 Penjelasan :
 - mengubah misalnya x2 = 4 → x2 - 4 = 0
 
  5. EKSEKUSI
+
 ```
 akar = regula_falsi(fungsi_expr, a, b)
 if akar is not None:
     plot_function(fungsi_expr, root=akar, x_range=(a - 1, b + 1))
 ```
+
 Penjelasan :
 - Jalankan Regula Falsi
 - Jika ditemukan akar, tampilkan grafik dan titik akar
