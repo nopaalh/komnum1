@@ -36,16 +36,16 @@ Penjelasan :
 
 Di dalamnya :
 - Ubah f(x) jadi fungsi numerik dengan:
-  ```
-  f = sp.lambdify(x, func_expr, 'numpy')
-  ```
-  - Lakukan iterasi hingga menemukan akar atau mencapai iterasi maksimum.
-  - Setiap iterasi:
-    ```
-    c = b - (fb * (b - a)) / (fb - fa)
-    ```
-    Ini adalah rumus Regula Falsi (false positition)
-    - Jika |f(c)| < tol, berarti c adalah akar.
-    - Periksa Tanda :
-        - Kalau f(a) × f(c) < 0 → akar ada di [a, c] → ubah b = c
-        - Kalau f(b) × f(c) < 0 → akar ada di [c, b] → ubah a = c
+```
+f = sp.lambdify(x, func_expr, 'numpy')
+```
+- Lakukan iterasi hingga menemukan akar atau mencapai iterasi maksimum.
+- Setiap iterasi:
+```
+c = b - (fb * (b - a)) / (fb - fa)
+```
+Ini adalah rumus Regula Falsi (false positition)
+- Jika |f(c)| < tol, berarti c adalah akar.
+  - Periksa Tanda :
+    - Kalau f(a) × f(c) < 0 → akar ada di [a, c] → ubah b = c
+    - Kalau f(b) × f(c) < 0 → akar ada di [c, b] → ubah a = c
