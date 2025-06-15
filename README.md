@@ -74,7 +74,7 @@ Penjelasan :
   if '=' in persamaan:
     kiri, kanan = persamaan.split('=')
     fungsi_expr = parse_expr(kiri.strip()) - parse_expr(kanan.strip())
-else:
+  else:
     fungsi_expr = parse_expr(persamaan)
   ```
 
