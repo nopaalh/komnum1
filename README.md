@@ -7,11 +7,13 @@
 
 
 🧩 1. IMPORT LIBRARY
+```
 import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
 from sympy.parsing.sympy_parser import parse_expr
 from sympy import symbols
+```
 
 Penjelasan :
 - numpy → Untuk membuat array x (untuk plotting)
